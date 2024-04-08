@@ -1,15 +1,5 @@
 from django.db import models
 
-# Create your models here.
-# class UserCred(models.Model):
-#     username = models.CharField(max_length=100, primary_key=True)
-#     password = models.CharField(max_length=40)
-#     role = models.CharField(max_length=30)
-
-# class Students(models.Model):
-#     name = models.CharField(max_length=100)
-#     email = models.ForeignKey()
-
 class UserCred(models.Model):
     username = models.CharField(max_length=100, primary_key=True)
     password = models.CharField(max_length=100)

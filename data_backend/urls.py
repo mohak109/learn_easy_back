@@ -10,4 +10,7 @@ urlpatterns = [
     path("enrollcourse", views.create_studentcourse, name="enrollcourse"),
     path("getuser", views.getOneUserCred, name="getoneuser"),
     path('getstudent', views.findOneStudent, name='getstudent'),
+    path('getcourses', views.getCoursesByType, name='getcourses'),
+    path('getteacher', views.findOneTeacher, name='getteacher'),
+    path('addstucourse', views.addStuCourse, name='addstucourse')
 ]
