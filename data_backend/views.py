@@ -185,6 +185,19 @@ def getCoursesByType(request):
             return JsonResponse({'message':'data not found'}, status=404)
         
 @csrf_exempt
+def getCoursesByTeacher(request):
+    if request.method == 'GET':
+        teacher= request.GET.get('teacher_id')
+        try:
+            courses = Course.objects.select_related('teacher').filter(teacher_id=teacher)
+            courses_serialized = CourSerializer(courses, many=True)
+            print(courses_serialized.data)
+            return JsonResponse(courses_serialized.data[0], status=200)
+        except:
+            print("Data not found")
+            return JsonResponse({'message':'data not found'}, status=404)
+        
+@csrf_exempt
 def addStuCourse(request):
     if request.method == 'POST':
         # print("Today's date:", date.today())
@@ -207,6 +220,10 @@ def addStuCourse(request):
     else:
         print({'error': 'Only POST requests are allowed'})
         return JsonResponse({'error': 'Only POST requests are allowed'})
+    
+def getStudByCourse(request):
+    if request.method == "GET":
+        course_id = request.GET.get
 
 
 def index(request):

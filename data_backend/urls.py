@@ -12,5 +12,6 @@ urlpatterns = [
     path('getstudent', views.findOneStudent, name='getstudent'),
     path('getcourses', views.getCoursesByType, name='getcourses'),
     path('getteacher', views.findOneTeacher, name='getteacher'),
-    path('addstucourse', views.addStuCourse, name='addstucourse')
+    path('addstucourse', views.addStuCourse, name='addstucourse'),
+    path('getcoursebyteacher', views.getCoursesByTeacher, name='getcoursebyteacher'),
 ]
